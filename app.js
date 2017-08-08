@@ -10,7 +10,7 @@ angular.module('Minhacidade', [
     'chart.js'
     ])
     .constant('minhacidadeURL', {
-    API_URL: 'http://www.minhacidade.top:8080/api/v1/cidades/',
+    API_URL: 'https://www.minhacidade.top:8080/api/v1/cidades/',
     GASTOMETRO: 'gastometro/',
     AREA: 'area/',
     SAUDE:'saude/',
@@ -87,7 +87,7 @@ function check($http,$rootScope, userService, $state, $location){
                 $rootScope.sidnav = false;
 
                 $('#content_main').attr('style', function(i,s) {
-                    return "background: url('../images/background.jpg') no-repeat center center !important; " +
+                    return "background: url('../web/images/background.jpg') no-repeat center center !important; " +
                         "-webkit-background-size: 100% 100% !important;" +
                         "-moz-background-size: 100% 100% !important;" +
                         "-o-background-size: 100% 100% !important;" +
