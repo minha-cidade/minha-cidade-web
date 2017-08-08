@@ -48,8 +48,18 @@
         var vm = this;
         vm.detail;
 
-        $scope.labels = [2009, 2010, 2012, 2013];
-        $scope.data = [[1000000, 2000000, 4000000, 61000000]];
+        var fullDataMoney = [[17510609.73, 16573704.74, 5139790.74, 4559132.78], [2123516.64, 6092879.05, 3357845.69, 2392031.46]];
+        var fullDataYears = [[2014, 2015, 2016, 2017], [2013, 2014, 2015, 2016]];
+        
+        $scope.detail = [];
+
+        for (var i = 0;fullDataMoney[detailID].length < i; i++) {
+            var aux = {ano:fullDataYears[detailID][i], empenhado:fullDataMoney[detailID][i]};
+            $scope.detail.push(aux);
+        };
+
+        $scope.labels = fullDataYears[detailID];
+        $scope.data = fullDataMoney[detailID];
 
         $scope.options = {
             datasets: [{
