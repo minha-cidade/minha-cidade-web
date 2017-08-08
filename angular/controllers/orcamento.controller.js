@@ -30,48 +30,46 @@
         this.myDate = new Date();
         this.isOpen = false;
 
-        $scope.areas = [{area:"Administração - 10,3 %",
-empenhado:265920759},
-{area:"Segurança Pública - 0.95 %",
-empenhado:24662937},
-{area:"Assistência Social - 1.31 %",
-empenhado:33808700},
-{area:"Previdência Social - 9.04 %",
-empenhado:233341919},
-{area:"Saúde - 34.92 %",
-empenhado:900531814},
-{area:"Educação - 16.16 %",
-empenhado:416950010},
-{area:"Cultura - 0.70 %",
-empenhado:18217000},
-{area:"Urbanismo - 9.67 %",
-empenhado:249420207},
-{area:"Habitação - 5.70 %",
-empenhado:147003000},
-{area:"Gestão Ambiental - 0.72 %",
-empenhado:18768500},
-{area:"Ciência e Tecnologia - 0.10 %",
-empenhado:2559040},
-{area:"Comércio e Serviços- 0.27 %",
-empenhado:7160500},
-{area:"Comunicações - 0.54 %",
-empenhado:13965000},
-{area:"Transporte - 2.21 %",
-empenhado:57064000},
-{area:"Encargos Especiais - 3.29 %",
-empenhado:85067579},
-{area:"Outros - 4,04 %",
-empenhado:104397155}];
-        /*$scope.areas = [];
+        $scope.areas = [{area:"Administração - 10.3 %",
+        empenhado:265920759},
+        {area:"Segurança Pública - 0.95 %",
+        empenhado:24662937},
+        {area:"Assistência Social - 1.31 %",
+        empenhado:33808700},
+        {area:"Previdência Social - 9.04 %",
+        empenhado:233341919},
+        {area:"Saúde - 34.92 %",
+        empenhado:900531814},
+        {area:"Educação - 16.16 %",
+        empenhado:416950010},
+        {area:"Cultura - 0.70 %",
+        empenhado:18217000},
+        {area:"Urbanismo - 9.67 %",
+        empenhado:249420207},
+        {area:"Habitação - 5.70 %",
+        empenhado:147003000},
+        {area:"Gestão Ambiental - 0.72 %",
+        empenhado:18768500},
+        {area:"Ciência e Tecnologia - 0.10 %",
+        empenhado:2559040},
+        {area:"Comércio e Serviços- 0.27 %",
+        empenhado:7160500},
+        {area:"Comunicações - 0.54 %",
+        empenhado:13965000},
+        {area:"Transporte - 2.21 %",
+        empenhado:57064000},
+        {area:"Encargos Especiais - 3.29 %",
+        empenhado:85067579},
+        {area:"Outros - 4,04 %",
+        empenhado:104397155}];
 
         areaService.getDadosGastometro().then(function(response){
-            angular.forEach(response.data.gastometro, function(value){
+            angular.forEach($scope.areas, function(value){
                 console.log(value);
                 $scope.labels.push( value.area);
                 $scope.data.push((value.empenhado));
-                $scope.areas.push(value);
             });
-        });*/
+        });
 
 
         $scope.selected = [];
