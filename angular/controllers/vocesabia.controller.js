@@ -59,8 +59,8 @@
             console.log($scope.detail)
         };
 
-        $scope.labels = fullDataYears[detailID];
-        $scope.data = fullDataMoney[detailID];
+        $scope.labels = [fullDataYears[detailID]];
+        $scope.data = [fullDataMoney[detailID]];
 
         $scope.options = {
             datasets: [{
