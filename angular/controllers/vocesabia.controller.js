@@ -56,6 +56,7 @@
         for (var i = 0;fullDataMoney[detailID].length < i; i++) {
             var aux = {ano:fullDataYears[detailID][i], empenhado:fullDataMoney[detailID][i]};
             $scope.detail.push(aux);
+            console.log($scope.detail);
         };
 
         $scope.labels = fullDataYears[detailID];
@@ -84,9 +85,8 @@
                     }
                 }]
             }
-
         };
-        
+
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
 
