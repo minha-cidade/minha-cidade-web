@@ -32,7 +32,7 @@
                                 <tbody md-body>
                                 <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in detail | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                                     <td md-cell>{{dessert.ano}}</td>
-                                    <td md-cell>{{dessert.empenhado}}</td>
+                                    <td md-cell>{{dessert.empenhado  | currency:'R$'}}</td>
                                 </tr>
                                 </tbody>
                             </table>
