@@ -32,7 +32,7 @@
                 var dif = today - date_begin;
 
                 console.log(dif);
-                console(gasto_segundo)
+                console.log(gasto_segundo)
                 $scope.gastos = (dif*gasto_segundo);
                 console.log($scope.gastos)
 
