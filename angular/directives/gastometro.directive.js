@@ -31,8 +31,10 @@
 
                 var dif = today - date_begin;
 
-                 console.log(dif);
+                console.log(dif);
+                console(gasto_segundo)
                 $scope.gastos = (dif*gasto_segundo);
+                console.log($scope.gastos)
 
                 $interval(function(){
                     $scope.gastos+= (gasto_segundo);
