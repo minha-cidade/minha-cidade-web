@@ -10,7 +10,7 @@ angular.module('Minhacidade', [
     'chart.js'
     ])
     .constant('minhacidadeURL', {
-    API_URL: 'https://www.minhacidade.top/api/v1/cidades/',
+    API_URL: '/api/v1/cidades/',
     GASTOMETRO: 'gastometro/',
     AREA: 'area/',
     SAUDE:'saude/',
