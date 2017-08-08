@@ -25,7 +25,7 @@ angular.module('Minhacidade', [
                 url: '/',
                 controller: 'indexController',
                 controllerAs: 'ctrl',
-                templateUrl: 'partials/home/home.html'
+                templateUrl: 'partials/home.html'
             })
             .state('orcamento', {
                 url: '/orcamento',
