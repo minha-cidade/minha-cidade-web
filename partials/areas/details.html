@@ -27,7 +27,8 @@
 
                                         <md-card-header-text layout="column" layout-align="center center">
                                             <span class="md-subhead">Gastos com {{vm.detail[0].area}}</span>
-                                            <gastometro></gastometro>
+                                            {{vm.detail[0].pago}}
+                                            <gastdetail pago="{{vm.detail[0].pago}}"></gastdetail>
                                             <span class="md-subhead">Ultima atualização 01 de janeiro de 2017</span>
                                         </md-card-header-text>
 
