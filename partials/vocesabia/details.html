@@ -15,13 +15,6 @@
                 <md-content layout="column" flex>
 
                     <md-card>
-
-                        <md-toolbar class="md-table-toolbar md-default" style="background: white; color: black;">
-                            <div class="md-toolbar-tools">
-                                <span>Despesas  previstas para 2017</span>
-                            </div>
-                        </md-toolbar>
-
                         <md-table-container>
                             <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
                                 <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
@@ -39,7 +32,7 @@
                                 <tbody md-body>
                                 <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in detail | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                                     <td md-cell>{{dessert.ano}}</td>
-                                    <td md-cell>{{dessert.empenhado}}</td>
+                                    <td md-cell>{{dessert.empenhado  | currency:'R$'}}</td>
                                 </tr>
                                 </tbody>
                             </table>
