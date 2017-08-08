@@ -15,10 +15,6 @@
                 <md-content layout="column" flex>
 
                     <md-card>
-
-                        <md-toolbar class="md-table-toolbar md-default" style="background: white; color: black;">
-                        </md-toolbar>
-
                         <md-table-container>
                             <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
                                 <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
