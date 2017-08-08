@@ -53,12 +53,9 @@
         
         $scope.detail = [];
 
-        console.log(fullDataMoney[detailID].length)
-
-        for (var i = 0;fullDataMoney[detailID].length < i; i++) {
+        for (var i = 0;fullDataMoney[detailID].length > i; i++) {
             var aux = {ano:fullDataYears[detailID][i], empenhado:fullDataMoney[detailID][i]};
             $scope.detail.push(aux);
-            console.log($scope.detail);
         };
 
         $scope.labels = fullDataYears[detailID];
