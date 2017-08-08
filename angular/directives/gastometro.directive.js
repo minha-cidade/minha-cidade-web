@@ -38,6 +38,7 @@
 
                 $interval(function(){
                     $scope.gastos+= (gasto_segundo);
+                    console.log(gasto_segundo)
                 },1000);
 
             }
