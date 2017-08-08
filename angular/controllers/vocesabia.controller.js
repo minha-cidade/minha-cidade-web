@@ -53,9 +53,6 @@
         
         $scope.detail = [];
 
-        console.log("Teste")
-        console.log(detailID)
-
         for (var i = 0;fullDataMoney[detailID].length < i; i++) {
             var aux = {ano:fullDataYears[detailID][i], empenhado:fullDataMoney[detailID][i]};
             $scope.detail.push(aux);
@@ -89,15 +86,7 @@
             }
 
         };
-
-        areaService.getDadosGastometro().then(function(response){
-            angular.forEach(response.data.gastometro, function(value){
-                // $scope.labels.push( value.area);
-                // $scope.data.push((value.empenhado));
-                $scope.detail.push(value);
-            });
-        });
-
+        
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
 
