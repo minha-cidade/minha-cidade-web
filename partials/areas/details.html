@@ -1,18 +1,17 @@
-<md-dialog flex-gt-md="80" aria-label="Mango (Fruit)" ng-cloak>
+<md-dialog flex-gt-md="80" aria-label="Mango (Fruit)">
     <form>
         <md-toolbar>
             <div class="md-toolbar-tools">
-            <h2>{{vm.detail[0].idArea}}</h2>
+                <h2>{{vm.detail[0].idArea}}</h2>
             </div>
         </md-toolbar>
         <md-dialog-content>
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label="Gráfico">
                     <md-content class="md-padding">
-                        <!--<h2>vm.detail[0].topVinte</h2>-->
                         <div style="position: relative; float:left; min-width: 50%; min-height: 300px;">
                             <md-card>
-                                <canvas class="chart chart-line" chart-data="data" chart-labels="labels"
+                                <canvas class="chart chart-bar" chart-data="data" chart-labels="labels"
                                         chart-options="optionsChart" style="padding-top: 10px;"></canvas>
                             </md-card>
                         </div>
@@ -98,7 +97,7 @@
         <md-dialog-actions layout="row">
 
             <md-button ng-click="answer('useful')" class="md-primary">
-            Fechar
+                Fechar
             </md-button>
         </md-dialog-actions>
     </form>

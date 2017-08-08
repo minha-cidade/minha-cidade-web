@@ -26,6 +26,7 @@
         // });
 
         areaService.getDadosGastometro().then(function(response){
+            console.log(response.data.gastometro);
             angular.forEach(response.data.gastometro, function(value){
                 vm.gastometros.push(value);
             });
@@ -53,8 +54,8 @@
         vm.detail = [];
         $scope.year = '';
 
-        $scope.labels = [2009, 2010, 2012, 2013];
-        $scope.data = [[1000000, 2000000, 4000000, 61000000]];
+        $scope.labels = [2014, 2015, 2016, 2017];
+        $scope.data = [1000000, 2000000, 4000000, 61000000];
 
         $scope.optionsChart = {
             datasets: [{
@@ -93,6 +94,42 @@
 
             });
         });
+
+        $scope.data = pegarDataAnos(2014,2017);
+
+        function pegarDataAnos(ano_inicial, ano_final){
+            var dados = [];
+            var ano_ini = ano_inicial;
+
+            var dif = ano_final - ano_inicial;
+
+            showDetail().then(function(response){
+
+
+                for(var i = 0; i <= dif; i++){
+                    if(ano_ini > ano_final){
+
+                        return dados;
+                    }else{
+
+                        areaService.getYear(ano_ini, response[0].idArea)
+                            .then(function (response) {
+                                dados.push(response.data.gastometro[0].pago);
+                            });
+
+                        ano_ini++;
+                    }
+                }
+
+
+            });
+
+
+
+            return dados;
+        }
+
+
 
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
