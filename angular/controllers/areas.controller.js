@@ -14,7 +14,9 @@
     function areasController($scope, areaService, $mdDialog) {
         var vm = this;
         $scope.showTabDialog = showTabDialog;
-        $scope.valorTotal =0;
+        $scope.valorTotal = 0;
+
+        $scope.arrayGambis = [1];
         vm.gastometros = [];
 
         areaService.getDadosGastometro().then(function(response){
