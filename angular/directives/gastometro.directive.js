@@ -30,23 +30,11 @@
                     var now = new Date();
                     var start = new Date(now.getFullYear(), 0, 0);
                     var diff = now - start;
-                    var oneDay = 1000 * 60 * 60 * 24;
-                    var day = Math.floor(diff / oneDay);
 
-                    console.log("Dia day"+day);
+                    var sT = dif.getTime();
+                    const sY = 31536000;
 
-                    const segundos_ano = 31536000;
-                    var gasto_segundo = ($scope.valor / segundos_ano);
-
-                    console.log("gasto segundo "+gasto_segundo);
-                    //
-                    // var date_begin = new Date(2017, 0, 1);
-                    // var today = new Date();
-                    //
-                    // var dif = today - date_begin;
-
-                    // console.log(dif);
-                    $scope.gastos = (day* 24 * 60 * 60)* gasto_segundo;
+                    var gasto_segundo = (sT/sY)*$scope.valor;
 
                     $interval(function(){
                         $scope.gastos+= (gasto_segundo);
