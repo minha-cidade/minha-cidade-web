@@ -99,33 +99,28 @@
 
         function pegarDataAnos(ano_inicial, ano_final){
             var dados = [];
-            var ano_ini = ano_inicial;
-
             var dif = ano_final - ano_inicial;
+            var ano_inicial = ano_inicial;
+
+            for (var i = 0; ano_final > i; i++) {
+               dados.push(0);
+            };
 
             showDetail().then(function(response){
-
-
                 for(var i = 0; i <= dif; i++){
-                    if(ano_ini > ano_final){
-
+                    if(ano_inicial > ano_final){
                         return dados;
                     }else{
-
-                        areaService.getYear(ano_ini, response[0].idArea)
+                        areaService.getYear(ano_inicial, response[0].idArea)
                             .then(function (response) {
-                                dados.push(response.data.gastometro[0].pago);
+                                dados[response.data.gastometro[0].ano - ano_inicial] = response.data.gastometro[0].pago;
                             });
 
-                        ano_ini++;
+                        ano_inicial++;
                     }
                 }
-
-
             });
-
-
-
+            
             return dados;
         }
 
