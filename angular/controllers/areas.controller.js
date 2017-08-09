@@ -13,17 +13,9 @@
 
     function areasController($scope, areaService, $mdDialog) {
         var vm = this;
-        // vm.areas = [];
         $scope.showTabDialog = showTabDialog;
 
         vm.gastometros = [];
-
-        // areaService.getDadosGastometro().then(function(response){
-        //     console.log(response.data.gastometro);
-        //     angular.forEach(response.data.gastometro, function(value){
-        //         vm.areas.push(value);
-        //     });
-        // });
 
         areaService.getDadosGastometro().then(function(response){
             console.log(response.data.gastometro);
@@ -80,21 +72,9 @@
                     }
                 }]
             }
-
         };
 
-
         $scope.areas = [];
-
-        // areaService.getDadosGastometro().then(function(response){
-        //     angular.forEach(response.data.gastometro, function(value){
-        //         // $scope.labels.push( value.area);
-        //         // $scope.data.push((value.empenhado));
-        //         // $scope.areas.push(value);
-        //
-        //     });
-        // });
-
         $scope.data = pegarDataAnos(2014,2017);
 
         function pegarDataAnos(ano_inicial, ano_final){
@@ -112,11 +92,9 @@
                         .then(function (response) {
                             dados[response.data.gastometro[0].ano - static_ano_inicio] = response.data.gastometro[0].pago;
                         });
-
                     ano_inicial++;
                 }
             });
-
             return dados;
         }
 
@@ -147,22 +125,7 @@
         };
 
         $scope.loadStuff = function () {
-            $scope.promise = $timeout(function () {
-                // loading
-            }, 2000);
-        }
-
-        $scope.logItem = function (item) {
-            console.log(item.name, 'was selected');
-        };
-
-        $scope.logOrder = function (order) {
-            console.log('order: ', order);
-        };
-
-        $scope.logPagination = function (page, limit) {
-            console.log('page: ', page);
-            console.log('limit: ', limit);
+            $scope.promise = $timeout(function () {}, 2000);
         }
 
         $scope.hide = hide;
@@ -172,35 +135,24 @@
         activate();
 
         function activate() {
-            return showDetail()
-                .then(function() {
-                    console.log('Activated Event View');
-                });
-        }
+            return showDetail().then(function() {});
+        };
 
 
         function showDetail() {
-            return areaService.getDadosArea(detailID)
-                .then(function(response) {
-                    return vm.detail = response.data.gastometro;
-                });
+            return areaService.getDadosArea(detailID).then(function(response) {
+                return vm.detail = response.data.gastometro;
+            });
         };
 
         $scope.$watch('year', function() {
-
             if($scope.year){
                 showDetail().then(function(response){
-
-                    areaService.getYear($scope.year, response[0].idArea)
-                        .then(function (response) {
-                            return vm.detail = response.data.gastometro;
-                        });
+                    areaService.getYear($scope.year, response[0].idArea).then(function (response) {
+                        return vm.detail = response.data.gastometro;
+                    });
                 });
             }
-
-            // showDetail();
-
-            // areaService.getYear($scope.year, vm.detail[0].idArea)
         });
 
         function hide() {
