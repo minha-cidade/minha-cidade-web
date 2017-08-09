@@ -14,15 +14,17 @@
     function areasController($scope, areaService, $mdDialog) {
         var vm = this;
         $scope.showTabDialog = showTabDialog;
-
+        $scope.valorTotal =0;
         vm.gastometros = [];
 
         areaService.getDadosGastometro().then(function(response){
             console.log(response.data.gastometro);
             angular.forEach(response.data.gastometro, function(value){
                 vm.gastometros.push(value);
+                $scope.valorTotal += value.pago;
             });
         });
+
 
 
         function showTabDialog(ev,id) {
