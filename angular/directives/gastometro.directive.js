@@ -29,7 +29,7 @@
                 }else{
                     var now = new Date();
                     var start = new Date(now.getFullYear(), 0, 0);
-                    var diff = now - start;
+                    var diff = new Date(now - start);
 
                     var sT = diff.getTime();
                     const sY = 31536000;
