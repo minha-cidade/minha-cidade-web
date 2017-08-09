@@ -46,7 +46,7 @@
                     console.log(dDaySeconds.getTime()/1000)
                     console.log(dDs)
                     console.log(gasto_segundo)
-                    console.log($scope.valor)
+                    console.log($scope.valor + gasto_segundo)
 
                     console.log($scope.valor + gasto_segundo * dDs)
 
