@@ -38,7 +38,7 @@
                     var dYs = dYersSeconds.getTime()/1000;
 
 
-                    console.log(now)
+                    console.log(dDaySeconds)
                     console.log(startDay)
                     console.log(dDs)
 
