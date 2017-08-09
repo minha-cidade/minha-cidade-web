@@ -38,10 +38,7 @@
                     var dYs = dYersSeconds.getTime()/1000;
 
 
-                    console.log(dDaySeconds)
-                    console.log(startDay)
-                    console.log(now)
-                    console.log(dDs)
+                    console.log(dDaySeconds.getTime())
 
                     var gasto_segundo = $scope.valor/dYs;
 
