@@ -48,7 +48,7 @@
                     console.log(gasto_segundo)
                     console.log($scope.valor)
 
-                    console.log(gasto_segundo * dDs)
+                    console.log($scope.valor + gasto_segundo * dDs)
 
                     $scope.gastos = $scope.valor + (gasto_segundo * dDs);
 
