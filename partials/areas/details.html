@@ -87,7 +87,7 @@
                                     <tr md-row md-auto-select="options.autoSelect" ng-repeat="dessert in vm.detail[0].topVinte | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
                                         <td md-cell>{{dessert.favorecido}}</td>
                                         <td md-cell>{{dessert.pagante}}</td>
-                                        <td md-cell>{{dessert.valor}}</td>
+                                        <td md-cell>{{dessert.valor |  currency:'R$':2}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
