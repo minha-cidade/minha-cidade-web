@@ -99,6 +99,19 @@
         }
 
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
+        $scope.hoje = dd+'/'+mm+'/'+yyyy;
+
 
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
@@ -133,6 +146,8 @@
         $scope.answer = answer;
 
         activate();
+
+
 
         function activate() {
             return showDetail().then(function() {});
