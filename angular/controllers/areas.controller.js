@@ -55,7 +55,7 @@
         $scope.year = '';
 
         $scope.labels = [2014, 2015, 2016, 2017];
-        $scope.data = [1000000, 2000000, 4000000, 61000000];
+        $scope.data = [];
 
         $scope.optionsChart = {
             datasets: [{
@@ -86,14 +86,14 @@
 
         $scope.areas = [];
 
-        areaService.getDadosGastometro().then(function(response){
-            angular.forEach(response.data.gastometro, function(value){
-                // $scope.labels.push( value.area);
-                // $scope.data.push((value.empenhado));
-                // $scope.areas.push(value);
-
-            });
-        });
+        // areaService.getDadosGastometro().then(function(response){
+        //     angular.forEach(response.data.gastometro, function(value){
+        //         // $scope.labels.push( value.area);
+        //         // $scope.data.push((value.empenhado));
+        //         // $scope.areas.push(value);
+        //
+        //     });
+        // });
 
         $scope.data = pegarDataAnos(2014,2017);
 
