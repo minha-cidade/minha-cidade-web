@@ -28,17 +28,21 @@
 
                 }else{
                     var now = new Date();
-                    var start = new Date(now.getFullYear(), 0, 0);
-                    var diff = new Date(now - start);
-                    var sT = diff.getTime()/1000;
-                    var sY = 31536000;
+                    var startYear = new Date(now.getFullYear(), 0, 0);
+                    var startDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-                    $scope.gastos = (sT/sY)*$scope.valor;
+                    var dDaySeconds = new Date(now - startDay);
+                    var dYersSeconds = new Date(startDay - startYear);
 
-                    var gasto_segundo = $scope.gastos/sT;
+                    var dDs = dDaySeconds.getTime()/1000;
+                    var dYs = dYersSeconds.getTime()/1000;
+
+                    var gasto_segundo = $scope.gastos/dYs;
+
+                    $scope.gastos = $scope.valor + (gasto_segundo * dDs);
 
                     $interval(function(){
-                        $scope.gastos+= (gasto_segundo);
+                        $scope.gastos+= gasto_segundo;
                     },1000);
 
                 }
