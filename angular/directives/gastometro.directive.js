@@ -34,12 +34,21 @@
                     var dDaySeconds = new Date(now - startDay);
                     var dYersSeconds = new Date(startDay - startYear);
 
+                    
+
                     var dDs = dDaySeconds.getTime()/1000;
                     var dYs = dYersSeconds.getTime()/1000;
 
+                    console.log(dDs)
+                    console.log(dYs)
+
                     var gasto_segundo = $scope.gastos/dYs;
 
+                    console.log(gasto_segundo)
+
                     $scope.gastos = $scope.valor + (gasto_segundo * dDs);
+
+                    console.log($scope.gastos)
 
                     $interval(function(){
                         $scope.gastos+= gasto_segundo;
