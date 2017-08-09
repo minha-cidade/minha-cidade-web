@@ -36,7 +36,7 @@
 
                     
                     var sY = 31536000;
-                    console.log(sT/sY);
+                    console.log($scope.valor);
                     var gasto_segundo = (sT/sY)*$scope.valor;
 
                     $interval(function(){
