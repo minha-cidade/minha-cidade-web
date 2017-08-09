@@ -38,6 +38,10 @@
 
                     var gasto_segundo = $scope.valor/dYs;
 
+                    console.log($scope.valor)
+                    console.log(dYs)
+                    console.log(gasto_segundo)
+
                     $scope.gastos = $scope.valor + (gasto_segundo * dDs);
 
                     $interval(function(){
