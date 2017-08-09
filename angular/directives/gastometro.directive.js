@@ -31,7 +31,7 @@
                     var start = new Date(now.getFullYear(), 0, 0);
                     var diff = now - start;
 
-                    var sT = dif.getTime();
+                    var sT = diff.getTime();
                     const sY = 31536000;
 
                     var gasto_segundo = (sT/sY)*$scope.valor;
