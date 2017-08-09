@@ -32,9 +32,11 @@
                     var diff = new Date(now - start);
 
                     var sT = diff.getTime()/1000;
-                    console.log(sT);
-                    const sY = 31536000;
+                    
 
+                    
+                    var sY = 31536000;
+                    console.log(sT/sY);
                     var gasto_segundo = (sT/sY)*$scope.valor;
 
                     $interval(function(){
