@@ -100,6 +100,7 @@
         function pegarDataAnos(ano_inicial, ano_final){
             var dados = [];
             var dif = ano_final - ano_inicial;
+            var static_ano_inicio = ano_inicial;
 
             for (var i = 0; ano_final > i; i++) {
                dados.push(0);
@@ -113,9 +114,9 @@
                         areaService.getYear(ano_inicial, response[0].idArea)
                             .then(function (response) {
                                 console.log(response.data.gastometro[0].ano)
-                                console.log(ano_inicial)
+                                console.log(static_ano_inicio)
                                 console.log(response.data.gastometro[0].ano - ano_inicial)
-                                dados[response.data.gastometro[0].ano - ano_inicial] = response.data.gastometro[0].pago;
+                                dados[response.data.gastometro[0].ano - static_ano_inicio] = response.data.gastometro[0].pago;
                             });
 
                         ano_inicial++;
