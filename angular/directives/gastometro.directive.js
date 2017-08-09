@@ -33,11 +33,9 @@
                     var sT = diff.getTime()/1000;
                     var sY = 31536000;
 
-
                     $scope.gastos = (sT/sY)*$scope.valor;
 
                     var gasto_segundo = $scope.gastos/sT;
-
 
                     $interval(function(){
                         $scope.gastos+= (gasto_segundo);
