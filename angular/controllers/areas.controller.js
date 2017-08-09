@@ -108,18 +108,16 @@
 
             showDetail().then(function(response){
                 for(var i = 0; i <= dif; i++){
-                    if(ano_inicial > ano_final){
-                        return dados;
-                    }else{
-                        areaService.getYear(ano_inicial, response[0].idArea)
-                            .then(function (response) {
-                                dados[response.data.gastometro[0].ano - static_ano_inicio] = response.data.gastometro[0].pago;
-                            });
+                    areaService.getYear(ano_inicial, response[0].idArea)
+                        .then(function (response) {
+                            dados[response.data.gastometro[0].ano - static_ano_inicio] = response.data.gastometro[0].pago;
+                        });
 
-                        ano_inicial++;
-                    }
+                    ano_inicial++;
                 }
             });
+
+            return dados;
         }
 
 
