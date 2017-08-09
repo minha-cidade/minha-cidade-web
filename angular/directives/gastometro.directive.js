@@ -30,14 +30,14 @@
                     var now = new Date();
                     var start = new Date(now.getFullYear(), 0, 0);
                     var diff = new Date(now - start);
-
                     var sT = diff.getTime()/1000;
-                    
-
-                    
                     var sY = 31536000;
-                    console.log($scope.valor);
-                    var gasto_segundo = (sT/sY)*$scope.valor;
+
+
+                    $scope.gastos = (sT/sY)*$scope.valor;
+
+                    var gasto_segundo = $scope.gastos/sT;
+
 
                     $interval(function(){
                         $scope.gastos+= (gasto_segundo);
