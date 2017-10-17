@@ -20,7 +20,7 @@
         vm.gastometros = [];
 
         areaService.getDadosGastometro().then(function(response){
-            console.log(response.data.gastometro);
+
             angular.forEach(response.data.gastometro, function(value){
                 vm.gastometros.push(value);
                 $scope.valorTotal += value.pago;
@@ -30,7 +30,6 @@
 
 
         function showTabDialog(ev,id) {
-            console.log(id);
             return $mdDialog.show({
                 controller: detailsAreaController,
                 controllerAs: 'vm',

@@ -12,9 +12,6 @@
 
     function orcamentoController($scope, $mdEditDialog, $q, $timeout, areaService) {
 
-        // $scope.labels = ["Saúde", "Educação", "Administração"];
-        // $scope.data = [22101,1251,2221.11];
-
         $scope.labels = [];
         $scope.data = [];
 
@@ -65,7 +62,6 @@
 
         areaService.getDadosGastometro().then(function(response){
             angular.forEach($scope.areas, function(value){
-                console.log(value);
                 $scope.labels.push( value.area);
                 $scope.data.push((value.empenhado));
             });

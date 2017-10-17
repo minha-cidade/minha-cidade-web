@@ -22,7 +22,6 @@
             });
 
             function showTabDialog(ev,id) {
-                console.log(id);
                 return $mdDialog.show({
                     controller: detailsController,
                     controllerAs: 'vm',

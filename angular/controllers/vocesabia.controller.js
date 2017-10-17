@@ -19,14 +19,6 @@
 
         $scope.showTabDialog = showTabDialog;
 
-        // areaService.getDadosGastometro().then(function(response){
-        //     console.log(response.data.gastometro);
-        //     angular.forEach(response.data.gastometro, function(value){
-        //         vm.vocesabia.push(value);
-        //     });
-        // });
-
-
         function showTabDialog(ev,id) {
 
             return $mdDialog.show({
