@@ -11,22 +11,15 @@
 </head>
 <body>
     <div layout="column" layout-fill>
-
         <!-- Include template of header -->
-        <div ng-show="header" ng-include src="'partials/header.html'"></div>
+        <div ng-controller="sidebarController" ng-show="header" ng-include src="'partials/header.html'"></div>
 
         <div layout="column" style="height:100%;" ng-cloak>
-            <section ng-controller="sidebarController" layout="row" flex >
+            <section layout="row" flex >
                 <!-- Include template of side -->
                 <div ng-show="sidnav" id="sidnav" ng-include src="'partials/sidnav.html'"></div>
 
-                <md-content class="fundo" id="content_main" flex layout-padding>
-                    <md-button class=" btn-cadastro md-fab md-primary md-hue-2 sideButton" style="background: #13AB75;" hide-gt-sm ng-click="toggleLeft()">
-                        <md-icon class="iconMenu" md-svg-src="images/icons/ic_dehaze_black_24px.svg" ></md-icon>
-                        <md-tooltip>
-                            Abrir menu
-                        </md-tooltip>
-                    </md-button>
+                <md-content id="content_main" class="fundo" flex layout-padding style="background: url('images/background.jpg') no-repeat center center !important;-webkit-background-size: 100% 100% !important;-moz-background-size: 100% 100% !important;-o-background-size: 100% 100% !important;background-size: 100% 100% !important;">
                     <div layout="column">
                         <ui-view></ui-view>
                     </div>
@@ -84,7 +77,6 @@
     <!--Directives App-->
     <script src="angular/directives/gastometro.directive.js"></script>
     <script src="angular/directives/seticons.directive.js"></script>
-    <script src="angular/directives/gastometro-detail.directive.js"></script>
 </html>
 
 

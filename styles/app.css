@@ -10,26 +10,25 @@
   src: url("../fonts/OpenSans-Light.ttf");
 }
 
-.div-principal, .md-content{
+.div-principal{
   position: relative;
   max-width: 500px;
   top: 200px;
   margin: 0 auto;
   opacity: 0.90;
-  /*background: white;*/
   border-radius: 20px;
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.div-primaria, .flex {
+.div-primaria {
   background: #25252a !important;
   /*min-height: 300px;*/
   min-width: 210px !important;
   border-radius: 4px 0 0 4px !important;
 }
 
-.div-segundaria, .flex {
+.div-segundaria {
   background: #F9F9F9 !important;
   min-height: 280px;
   min-width: 300px !important;
@@ -50,6 +49,12 @@ md-tab-item.md-tab{
   border-radius: 4px;
   font-family: 'fonteCity';
   font-weight: bold;
+}
+
+.position-img {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .margim-extra {
@@ -91,6 +96,11 @@ md-tab-item.md-tab{
   color: white;
 }
 
+.logo-facebook {
+    font-size: 48px;
+    height: 60px;
+}
+
 @media only screen and (max-width : 599px) {
 
 
@@ -103,19 +113,23 @@ md-tab-item.md-tab{
   }
 
   .div-primaria {
-
+    height: 200px !important;
     border-radius: 4px 4px 0 0 !important;
   }
 
-  .div-segundaria, .flex {
+  .div-segundaria {
     /*min-height: 300px;*/
-    background: #F9F9F9;
+    background: #F9F9F9 !important;
     border-radius: 4px 0 4px 4px !important;
-
-
+    min-height: 280px;
+    min-width: 300px !important;
   }
-}
 
+    /*.logo-facebook {*/
+        /*font-size: 28px;*/
+        /*height: 30px;*/
+    /*}*/
+}
 
 .select-font {
   font-family: 'fonteSelect';

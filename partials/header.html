@@ -1,16 +1,20 @@
 <md-toolbar id="header">
     <div class="md-toolbar-tools toolbar-bar-collor" layout="row">
 
-        <img ng-src="../web/images/logo_header.png" style="max-height: 50%;min-height: 40%;">
-        <h1 style="display: table; color: white;">Minha Cidade</h1>
+        <md-button style="background: black;" hide-gt-sm ng-click="toggleLeft()">
+            <md-icon class="iconMenu" md-svg-src="../web/images/icons/ic_dehaze_white_24px.svg" ></md-icon>
+            <md-tooltip>
+            Abrir menu
+            </md-tooltip>
+        </md-button>
 
-        <div layout="row" layout-align="end" style="width: 100%;">
-            <a href="http://www.facebook.com.br">
-                <md-icon md-svg-src='images/icons/facebook-app-symbol.svg' style="font-size: 48px; height: 60px;"></md-icon>
+        <img hide-xs ng-src="../web/images/logo_header.png" style="max-height: 50%;min-height: 40%;">
+        <h1 hide-xs style="display: table; color: white;">Minha Cidade</h1>
+
+        <span class="position-img">
+            <a href="https://www.facebook.com/minhacidadejp/">
+                <md-icon md-svg-src='..web/images/icons/facebook-app-symbol.svg' style="font-size: 48px; height: 60px;"></md-icon>
             </a>
-            <a href="http://www.instagram.com">
-                <md-icon md-svg-src='images/icons/if_Instagram_Solid_1435170.svg' style="font-size: 48px; height: 48px; width: 48px;"></md-icon>
-            </a>
-        </div>
+        </span>
     </div>
 </md-toolbar>
